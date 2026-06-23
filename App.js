@@ -26,7 +26,7 @@ export default function App() {
           <AuthProvider>
             <AppLock>
               <AlertProvider>
-                <NavigationContainer>
+                <NavigationContainer documentTitle={{ formatter: () => 'Cash Flow' }}>
                   <AppNavigator />
                 </NavigationContainer>
               </AlertProvider>

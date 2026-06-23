@@ -17,6 +17,9 @@
       "eas": {
         "projectId": "210406c1-437b-4517-865c-48797c4618f7"
       }
+    },
+    "web": {
+      "favicon": "./assets/hs_logo.png"
     }
   }
 }
