@@ -20,6 +20,9 @@
     },
     "web": {
       "favicon": "./assets/icon.png"
+    },
+    "experiments": {
+      "baseUrl": "/PersonalBudgetApp"
     }
   }
 }
