@@ -20,4 +20,3 @@ veda
 .env.production
 google-services.json
 GoogleService-Info.plist
-firebaseConfig.js
