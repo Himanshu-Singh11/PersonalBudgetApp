@@ -5,6 +5,7 @@ import { initializeApp } from 'firebase/app';
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Platform } from 'react-native';
 
 // ─────────────────────────────────────────────────────────
 //  Replace the placeholder values below with your actual
@@ -23,10 +24,18 @@ const firebaseConfig = {
 // Initialize Firebase app instance
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase Authentication with React Native Persistence
-export const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(AsyncStorage),
-});
+// Initialize Firebase Authentication with appropriate Persistence
+let authPersistence;
+if (Platform.OS === 'web') {
+  // On web, we don't need to specify persistence explicitly (it defaults to indexedDB)
+  // or we can import browserLocalPersistence dynamically if needed.
+  // But simply initializing without persistence arg falls back to default web persistence.
+  authPersistence = undefined;
+} else {
+  authPersistence = getReactNativePersistence(AsyncStorage);
+}
+
+export const auth = initializeAuth(app, authPersistence ? { persistence: authPersistence } : {});
 
 // Firebase Firestore (database) instance
 export const db = getFirestore(app);
