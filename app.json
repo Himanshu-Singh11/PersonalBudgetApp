@@ -19,7 +19,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/hs_logo.png"
+      "favicon": "./assets/icon.png"
     }
   }
 }
