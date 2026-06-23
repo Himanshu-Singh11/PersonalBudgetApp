@@ -23,7 +23,9 @@
         flex: 1;
       }
     </style>
-  </head>
+    <!-- Cache busting favicon to fix Safari's aggressive caching -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=CashFlowFinal" />
+  <link rel="icon" href="/favicon.ico" /></head>
 
   <body>
     <!-- Use static rendering with Expo Router to support running without JavaScript. -->
@@ -32,6 +34,6 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="/PersonalBudgetApp/_expo/static/js/web/index-b4afbabaa2e6c219ed0f8326316b9441.js" defer></script>
+  <script src="/_expo/static/js/web/index-b109d95f06a92b48d06251f6043d5703.js" defer></script>
 </body>
 </html>
