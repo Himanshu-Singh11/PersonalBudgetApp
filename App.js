@@ -26,7 +26,7 @@ export default function App() {
           <AuthProvider>
             <AppLock>
               <AlertProvider>
-                <NavigationContainer documentTitle={{ formatter: () => 'Cash Flow' }}>
+                <NavigationContainer documentTitle={{ formatter: (options, route) => `Cash Flow${route?.name ? ` / ${options?.title ?? route?.name}` : ''}` }}>
                   <AppNavigator />
                 </NavigationContainer>
               </AlertProvider>
